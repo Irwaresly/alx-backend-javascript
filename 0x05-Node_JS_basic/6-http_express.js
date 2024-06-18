@@ -11,8 +11,6 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.listen(port, () => {
-
-});
+app.listen(port, () => {});
 
 module.exports = app;
