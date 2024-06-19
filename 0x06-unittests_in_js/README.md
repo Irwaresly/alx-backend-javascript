@@ -81,5 +81,3 @@ By the end of this project, you should be able to:
 
 - **Configuration and Test Files:** `package.json`, test files for each task.
 - **JavaScript Implementation Files:** `0-calcul.js`, `1-calcul.js`, `2-calcul_chai.js`, `utils.js`, `3-payment.js`, `4-payment.js`, `5-payment.js`, `6-payment_token.js`, `8-api/api.js`, `9-api/api.js`, `10-api/api.js`.
-
-This README provides a structured overview of the project tasks and objectives without including specific code implementations.
