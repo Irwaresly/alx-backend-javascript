@@ -1,0 +1,25 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "Basic unit tests using Mocha and Node assertion library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 0-calcul.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Irwaresly"
+  },
+  "keywords": [
+    "unit",
+    "tests",
+    "Mocha",
+    "assertion",
+    "testing"
+  ],
+  "author": "Silvia",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}
