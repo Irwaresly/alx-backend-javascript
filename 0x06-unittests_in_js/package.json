@@ -4,7 +4,7 @@
   "description": "Basic unit tests using Mocha and Node assertion library",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 0-calcul.test.js"
+    "test": "./node_modules/.bin/mocha '*.test.js'"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "author": "Silvia",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^5.1.1",
     "mocha": "^10.4.0"
   }
 }
