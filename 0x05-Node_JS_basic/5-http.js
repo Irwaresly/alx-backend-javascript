@@ -9,28 +9,20 @@ const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
   if (!dataPath) {
     reject(new Error('Cannot load the database'));
-  }
-  if (dataPath) {
+  } else {
     fs.readFile(dataPath, (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
-      }
-      if (data) {
+      } else {
         const reportParts = [];
         const fileLines = data.toString('utf-8').trim().split('\n');
         const studentGroups = {};
         const dbFieldNames = fileLines[0].split(',');
-        const studentPropNames = dbFieldNames.slice(
-          0,
-          dbFieldNames.length - 1
-        );
+        const studentPropNames = dbFieldNames.slice(0, dbFieldNames.length - 1);
 
         for (const line of fileLines.slice(1)) {
           const studentRecord = line.split(',');
-          const studentPropValues = studentRecord.slice(
-            0,
-            studentRecord.length - 1
-          );
+          const studentPropValues = studentRecord.slice(0, studentRecord.length - 1);
           const field = studentRecord[studentRecord.length - 1];
           if (!Object.keys(studentGroups).includes(field)) {
             studentGroups[field] = [];
@@ -101,9 +93,11 @@ app.on('request', (req, res) => {
   for (const routeHandler of SERVER_ROUTE_HANDLERS) {
     if (routeHandler.route === req.url) {
       routeHandler.handler(req, res);
-      break;
+      return; // Stop the loop once the handler is found and executed
     }
   }
+  res.statusCode = 404;
+  res.end('Not Found');
 });
 
 app.listen(PORT, HOST, () => {
